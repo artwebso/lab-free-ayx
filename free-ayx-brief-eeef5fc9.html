@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ayx · 介绍与导航</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f6f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #2e2b27;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+
+    .wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    /* 顶部导航 */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e2ddd3;
+      padding-bottom: 0.8rem;
+      margin-bottom: 2.2rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-left {
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: #5b554b;
+    }
+
+    .nav-right a {
+      color: #2e2b27;
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color 0.15s;
+    }
+
+    .nav-right a:hover {
+      color: #8a7b64;
+    }
+
+    /* hero 区域 */
+    .hero {
+      margin-bottom: 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1e1c18;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #6b6257;
+      border-left: 3px solid #c9bfab;
+      padding-left: 1rem;
+    }
+
+    /* 核心介绍 – 引用块 */
+    .intro-block {
+      background: #f0ede6;
+      border-left: 4px solid #8a7b64;
+      padding: 1.4rem 1.8rem;
+      margin-bottom: 2.2rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .intro-block p {
+      margin-bottom: 0.5rem;
+    }
+
+    .intro-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-block a {
+      color: #2e2b27;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #b7ac99;
+      font-weight: 500;
+    }
+
+    .intro-block a:hover {
+      text-decoration-color: #2e2b27;
+    }
+
+    /* 三个场景模块 */
+    .scenes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+      margin-bottom: 2.6rem;
+    }
+
+    .scene-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.4rem 1.2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+      border: 1px solid #ece7dd;
+    }
+
+    .scene-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: #3b3530;
+      letter-spacing: 0.3px;
+    }
+
+    .scene-card p {
+      font-size: 0.92rem;
+      color: #4f4840;
+    }
+
+    /* 常见说明（FAQ 摘要 + 提示框） */
+    .faq-summary {
+      margin-bottom: 2.4rem;
+    }
+
+    .faq-summary h2 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #2e2b27;
+      letter-spacing: 0.2px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e2ddd3;
+      padding: 0.8rem 0;
+    }
+
+    .faq-item:first-of-type {
+      border-top: 1px solid #e2ddd3;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      color: #3b3530;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: #5f564c;
+    }
+
+    .tip-box {
+      background: #ede9e0;
+      border-radius: 6px;
+      padding: 1rem 1.4rem;
+      margin-top: 1.2rem;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .tip-box .marker {
+      font-weight: 600;
+      color: #7a6d59;
+      flex-shrink: 0;
+    }
+
+    /* 页脚 */
+    .footer {
+      border-top: 1px solid #e2ddd3;
+      padding-top: 1.6rem;
+      margin-top: 1.8rem;
+      font-size: 0.85rem;
+      color: #7c7367;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .footer a {
+      color: #5f564c;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #ccc3b3;
+    }
+
+    .footer a:hover {
+      text-decoration-color: #5f564c;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .scenes {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .nav-right a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- 顶部导航 -->
+  <header class="nav">
+    <span class="nav-left">ayx 站点导览</span>
+    <div class="nav-right">
+      <a href="#intro">介绍</a>
+      <a href="#scenes">场景</a>
+      <a href="#faq">说明</a>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>ayx · 信息索引</h1>
+    <div class="sub">基于站点 <a href="https://free-ayx.com.cn">ayx</a> 的功能与定位整理</div>
+  </div>
+
+  <!-- 核心介绍（引用块风格） -->
+  <div class="intro-block" id="intro">
+    <p>本页面是对 <a href="https://free-ayx.com.cn">ayx</a> 的介绍性导航。该站点主要提供基础网络资源与轻量工具，面向日常信息获取与简单交互场景。内容结构清晰，无冗余跳转，适合快速了解可用模块。</p>
+    <p>以下从三个高频使用场景及常见问题层面展开，帮助新访客建立对站点能力的初步认知。所有描述均基于站点公开信息。</p>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <div class="scenes" id="scenes">
+    <div class="scene-card">
+      <h3>检索查询</h3>
+      <p>通过 <a href="https://free-ayx.com.cn">ayx</a> 内置的检索入口，快速定位文本或数据片段，减少多层跳转。适合需要即时查找参考信息的用户。</p>
+    </div>
+    <div class="scene-card">
+      <h3>资源引用</h3>
+      <p>站内部分页面提供可直接引用的公开链接与基础物料，例如样式片段、短代码或静态文档。可通过导航直接访问对应目录。</p>
+    </div>
+    <div class="scene-card">
+      <h3>简易配置</h3>
+      <p>针对常用环境变量或参数组合，站点聚合了少量配置参考与格式示例，便于本地调试时对照。内容保持克制，不包含执行脚本。</p>
+    </div>
+  </div>
+
+  <!-- 常见说明（FAQ 摘要 + 提示框） -->
+  <div class="faq-summary" id="faq">
+    <h2>常见说明</h2>
+
+    <div class="faq-item">
+      <strong>站点是否长期维护？</strong>
+      <p>根据公开更新记录，<a href="https://free-ayx.com.cn">ayx</a> 保持按月内容调整，结构稳定。具体时效以页面标注为准。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>内容是否允许转载？</strong>
+      <p>站内未特别声明许可的部分，建议引用时注明出处。具体授权信息可在相关页面底部查看。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>是否有交互式功能？</strong>
+      <p>当前以静态展示为主，部分页面提供简单的复制或跳转交互，不涉及用户数据收集。</p>
+    </div>
+
+    <!-- 提示框 -->
+    <div class="tip-box">
+      <span class="marker">▸</span>
+      <span>如需快速确认最新内容，可直接浏览 <a href="https://free-ayx.com.cn">ayx</a> 首页的时间戳区域。本介绍页仅作为辅助参考，不替代站点本身的说明文档。</span>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <span>介绍页 · 内容基于公开信息整理</span>
+    <span><a href="https://free-ayx.com.cn">ayx</a> · 2025</span>
+  </footer>
+</div>
+</body>
+</html>
